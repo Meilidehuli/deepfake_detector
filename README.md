@@ -1,11 +1,11 @@
-# LRNet
+# deepfake-detector
 Landmark Recurrent Network: An efficient and robust framwork for Deepfakes detection
 > The implementation for paper: **Improving the Efficiency and Robustness for Deepfakes Detection through Precise Geometric Features (CVPR2021)**. 
 > 
 >[[Paper Link](https://arxiv.org/abs/2104.04480)]
 
 # Overview
-LRNet is a light-weight and effective Deepfakes detection framework. 
+deepfake-detector is a light-weight and effective Deepfakes detection framework. 
 It analyzes the sequence of geometric features in facial videos 
 to capture the *temporal artifacts* (such as unnatural expressions) and make predictions.
 
@@ -19,15 +19,15 @@ techniques to alleviate the noise caused by different landmark detectors.
    are merged to obtain the final prediction.
    
 <div align="center">
-<img src="https://s2.loli.net/2022/03/01/TFZO86nwbiry2xl.png" alt="LRNet.png" width="80%;"/>
+<img src="https://s2.loli.net/2022/03/01/TFZO86nwbiry2xl.png" alt="deepfake-detector.png" width="80%;"/>
 </div>
 
 # Description
 
-> To go through the whole procedure of *LRNet*'s forgery detection (from an input video sample to its corresponding predicted label),
+> To go through the whole procedure of *deepfake-detector*'s forgery detection (from an input video sample to its corresponding predicted label),
 > you can enter the `./demo/` for more details.
 >
-> For easily training and evaluating the *LRNet*, you can enter the `./training/` for more details.
+> For easily training and evaluating the *deepfake-detector*, you can enter the `./training/` for more details.
 >
 > If you would like to use your own landmark detector to generate the dataset, you can enter the `./calibrator/` for more details.
 
@@ -125,7 +125,7 @@ If our work helps your research, welcome for the citation:
             We also try several landmark detectors and find that <code>Dlib</code> is relatively good solution. 
             Although it's accuracy and stability are not the SOTA, it helps alleviate preparing  
             burdensome dependencies (especially for deep-learning-based models). Besides, it's inference speed is fast
-            and suitable for reproducing the LRNet's framework. 
+            and suitable for reproducing the deepfake-detector's framework. 
             You could also replace it with other advanced landmark detectors.
         </li>
     </ul>
