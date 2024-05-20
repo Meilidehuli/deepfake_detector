@@ -2,12 +2,6 @@
 
 The training and evaluating codes for deepfake-detector.
 
-> We provide both `Tensorflow 2.x` and `PyTorch` implementation. While the `PyTorch` version is preferred. Because we customize and optimize the `Dropout` layer for input features, which is difficult to be implemented in `Tensorflow`. For further framework improvement, **we would only maintain the `PyTorch` version and we recommend you to start with it.** 
-
-
-
-
-
 # Dataset
 
 Before start training the model, you should prepare the datasets in the folder: `./datasets/`. Further instruction can be found on this folder's readme file.
@@ -136,75 +130,6 @@ We now provide training/evaluation codes in Jupyter Notebook.
 The codes are the same as above but executed in an interactive approach.
 You would open the `train.ipynb` for more details.
 It's helpful in the situation that we only load the dataset once and train the model multiple times.
-
-
-# TensorFlow 2.x
-
-## Requirement
-
-- TensorFlow > 2.0
-
-*(Recommend)* GPU acceleration support:
-
-- cudatoolkit
-- cudnn
-
-> The example codes have been validated on the latest TF2, the environment is:
->
-> `TensorFlow==2.6.2; cudatoolkit==11.3.1; cudnn==8.2.1 `
->
-> You can simply configure it by:
->
-> ```bash
-> pip install tensorflow
-> conda install cudnn
-> ```
-
-
-
-## Getting started
-
-### Notice
-
-- Related codes files: `model_tf.py`, `data_utils.py`
-- Before executing the codes, please ensure that you have prepared the datasets, and check the **initialization area (L73---L82)** in `model_tf.py`.
-- Because deepfake-detector have 2 branches `g1` and `g2`, which are trained and tested separately, you can select them freely by commenting or uncommenting them in code blocks between `# ----For g1/2----#` and `# ----g1/2 end----#`. **(L154, L168, L188, L194)**.
-- We have provided the trained model weights for exhibition in folder `./weights/tf/`. Back-up them if needed before training or modify the codes **(L157, L171, L190, L196)** to save the weights to your own files. Otherwise if you directly start the training, the example weights will be overwritten.
-
-
-
-### Usage
-
-If you want to train a model from scratch, you can execute the following command:
-
-```shell
-python model_tf.py -t
-```
-
-Then you wan evaluate the model with trained weights:
-
-```shell
-python model_tf.py -e
-```
-
-Also you can use GPU *(Recommend)* by:
-
-```shell
-python model_tf.py -t -g
-```
-
-You can carry out the whole training and evaluation procedures in one command:
-
-```shell
-python model_tf.py -t -e -g
-```
-
-For details, please consult:
-
-```shell
-python model_tf.py -h
-```
-
 
 
 # Other Infos
